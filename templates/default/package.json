@@ -1,0 +1,26 @@
+{
+  "name": "create-clean-create",
+  "description": "Clean create app template (based on create-create-app, see: https://github.com/uetchy/create-create-app)",
+  "version": "0.0.0",
+  "author": "Me-Phew <basmateusz@wp.pl>",
+  "scripts": {
+    "build": "tsup src/cli.ts --minify",
+    "clean": "shx rm -rf lib",
+    "dev": "tsup src/cli.ts --watch",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "bin": "dist/cli.js",
+  "files": [
+    "dist",
+    "templates"
+  ],
+  "devDependencies": {
+    "@types/node": "^17.0.29",
+    "tsup": "^5.12.1",
+    "typescript": "^4.6.3"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "create-create-app": "^7.3.0"
+  }
+}
